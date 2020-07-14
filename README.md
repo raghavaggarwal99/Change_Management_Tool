@@ -13,31 +13,7 @@
 Vue Black Dashboard features over 16 individual components, giving you the freedom of choosing and combining. This means that there are thousands of possible combinations. All components can take variations in color, that you can easily modify using SASS files. You will save a lot of time going from prototyping to full-functional code because all elements are implemented.
 We thought about everything, so this dashboard comes with 2 versions, Dark Mode and Light Mode. 
 
-We are very excited to share this dashboard with you and we look forward to hearing your feedback!
-
-
-## Table of Contents
-
-
-* [Demo](#demo)
-* [Quick Start](#quick-start)
-* [Documentation](#documentation)
-* [File Structure](#file-structure)
-* [Browser Support](#browser-support)
-* [Resources](#resources)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
-* [Licensing](#licensing)
-* [Useful Links](#useful-links)
-
-
 ## Demo
-
-- [Start page](https://demos.creative-tim.com/vue-black-dashboard)
-- [User profile page](https://demos.creative-tim.com/vue-black-dashboard/#/profile)
-- [Tables page ](https://demos.creative-tim.com/vue-black-dashboard/#/table-list)
-- [Maps Page](https://demos.creative-tim.com/vue-black-dashboard/#/maps)
-- [Notifications page](https://demos.creative-tim.com//vue-black-dashboard/#/notifications)
 
 [View More](https://demos.creative-tim.com/vue-black-dashboard).
 
