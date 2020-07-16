@@ -74,8 +74,8 @@
   
   </div>
 </template>
-
 <script>
+
 
   import BasePagination from '../components1/BasePagination'
   import { BaseAlert } from '@/components';
