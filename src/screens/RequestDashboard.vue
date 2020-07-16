@@ -33,7 +33,7 @@
                     <th>{{ todo.requestinfo[0].status}}</th>
                     <th>{{ userdetails[todo.requestinfo[0].userId][0].fullName }}</th>
                     <th>{{ userdetails[todo.requestinfo[0].userId][0].emailAddress }}</th>
-                    <th><button v-if="section1Tabs[todo.requestId][0][0].Feature"  type="button" v-on:click="changerequeststatus(section1Tabs[todo.requestId][0][0].Feature, todo.requestId)" class="btn btn-dark" >Approve</button></th>
+                    <th><button v-if="section1Tabs[todo.requestId][0][0].Feature"   type="button" v-on:click="changerequeststatus(section1Tabs[todo.requestId][0][0].Feature, todo.requestId)" class="btn btn-dark" >Approve</button></th>
                     <th><button v-if="section1Tabs[todo.requestId][1][0].Feature"  type="button" v-on:click="changerequeststatus(section1Tabs[todo.requestId][1][0].Feature, todo.requestId)" class="btn btn-dark">Decline</button></th>
                 </tr>
 						</tbody>
