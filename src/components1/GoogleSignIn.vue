@@ -6,7 +6,7 @@
                 <div class="line-separator"></div>
                   </div>
             <div class="row">
-                <div class="col-md-12"> <button class="btn btn-dark btn-lg btn-block" type="button" v-on:click="loginWithGoogle()"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Signup Using Google</button> </div>
+                <div class="col-md-12"> <button class="btn btn-dark btn-lg btn-block" type="button" v-on:click="loginWithGoogle()"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> SignIn Using Google</button> </div>
               </div> 
     </div>
 </template>

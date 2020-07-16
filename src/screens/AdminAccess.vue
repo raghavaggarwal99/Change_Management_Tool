@@ -113,7 +113,7 @@ export default {
                     })
             },
         },
-         computed: {
+        computed: {
         filteraccess : function(){
             console.log(this.selected)
             return this.fetchData()
