@@ -54,7 +54,8 @@
                   New Notifications
                 </p>
               </a>
-              <li class="nav-link">
+
+              <!-- <li class="nav-link">
                 <a href="#" class="nav-item dropdown-item">Mike John responded to your email</a>
               </li>
               <li class="nav-link">
@@ -68,7 +69,8 @@
               </li>
               <li class="nav-link">
                 <a href="#" class="nav-item dropdown-item">Another one</a>
-              </li>
+              </li> -->
+
             </base-dropdown>
             <base-dropdown tag="li"
                            :menu-on-right="!$rtl.isRTL"
