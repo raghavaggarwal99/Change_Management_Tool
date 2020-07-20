@@ -28,7 +28,7 @@
               </thead>
 				<tbody>		
 					<tr v-for="(todo,count) in section2Tabs" :key="todo.id">
-                    <th>{{ count}}</th>
+                    <th>{{count +1+ (currentPage-1)*perPage}}</th>
                     <th>{{ todo.requestinfo[0].info}}</th>
                     <th>{{ todo.requestinfo[0].status}}</th>
                     <th>{{ userdetails[todo.requestinfo[0].userId][0].fullName }}</th>
@@ -49,7 +49,7 @@
 
   <div class="row">
     <div class="col-lg-6 col-md-12 pull-right">
-        <base-pagination :page-count="perPage" v-model="currentPage" @input="toPage"></base-pagination>
+        <base-pagination :page-count="totalPages" v-model="currentPage" @input="toPage"></base-pagination>
     </div>
   </div>
 
@@ -79,8 +79,10 @@ export default {
                 userdetails: "",
                 count: 1,
                 perPage: 1,
+                totalPages: 1,
                 currentPage: 1,
-                successmessage: ""
+                successmessage: "",
+                
             }
         },
         created () {
@@ -100,7 +102,8 @@ export default {
                     this.section1Tabs= (response["data"].users)
                     this.section2Tabs= (response["data"].requests)
                     this.userdetails= response["data"].userdetails
-                    this.perPage=response["data"].totalPages;
+                    this.totalPages=response["data"].totalPages;
+                    this.perPage=response["data"].PerPage;
                             
                 })
                 .catch(e => {

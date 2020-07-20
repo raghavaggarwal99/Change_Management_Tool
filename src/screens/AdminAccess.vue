@@ -8,9 +8,7 @@
 			<div class="card-body">
 				<div class="table-responsive">
                     <div class="row"> 
-                        <card>
-                            <input type="text" v-model="search" class="form-control col-lg-6 col-md-12 " placeholder="Search something..." @input="filteredsearch"/> 
-                        </card>
+                       
                     </div>
                     <br>
                    <div class="col-lg-6 col-md-12">
