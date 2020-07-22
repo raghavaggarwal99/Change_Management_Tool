@@ -18,7 +18,7 @@
                     <h3>Create a Request</h3>
                     <div class="form-row">
                         <base-input class="col-md-6" label="Option1" placeholder="Option1" v-model="input.option1"/>
-                       <base-input class="col-md-4 dropdown-toggle" label="State" slot="title-container" type="secondary">
+                       <base-input class="col-md-4 dropdown-toggle" label="Request Type" slot="title-container" type="secondary">
                             <select id="inputState" class="form-control " v-model="selected">
                             <option disabled value="">Choose a request</option>
                             <option class="font-weight-bold">VPN Access</option>

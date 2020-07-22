@@ -47,11 +47,13 @@ console.log(token)
     {
       path: '/',
       name: 'Login',
+
       component: function(){
-        return import("@/screens/Login.vue")
+       
+          return import("@/screens/Login.vue")
+        
       
       },
-      
 
     },
     {
