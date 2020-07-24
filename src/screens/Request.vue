@@ -10,7 +10,7 @@
                 <div class="row"> 
  
                 <card>
-                <input type="text" v-model="search" class="form-control col-lg-6 col-md-12 " placeholder="Search something..." @input="filteredsearch"/> <CreateRequest @input="filterstatus" />
+                <CreateRequest @input="filterstatus" />
                 </card>
                 </div>
                       <br>
@@ -157,10 +157,6 @@ export default {
           return this.fetchData()
       },
 
-       filteredsearch: function () {
-           console.log(this.search)
-
-      },
       filterstatus : function(){
         console.log(this.selected)
         return this.fetchData()

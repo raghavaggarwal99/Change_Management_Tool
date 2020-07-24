@@ -8,9 +8,7 @@
 			<div class="card-body">
 				<div class="table-responsive">
                     <div class="row"> 
-                        <!-- <card>
-                            <input type="text" v-model="search" class="form-control col-lg-6 col-md-12 " placeholder="Search something..." @input="filteredsearch"/> 
-                        </card> -->
+                       
                     </div>
                     <br>
 
@@ -20,10 +18,10 @@
                     <th>Sr.no</th>
                     <th>Request Info</th>
                     <th>Request Status</th>
+                    <th>Request Description</th>
                     <th>User Name</th>
                     <th>User Email Id</th>
-                    <th>Approve</th>
-                    <th>Decline</th>
+                   
                 </tr>
               </thead>
 				<tbody>		
@@ -31,6 +29,7 @@
                     <th>{{count +1+ (currentPage-1)*perPage}}</th>
                     <th>{{ todo.requestinfo[0].info}}</th>
                     <th>{{ todo.requestinfo[0].status}}</th>
+                     <th>{{ todo.requestinfo[0].description}}</th>
                     <th>{{ userdetails[todo.requestinfo[0].userId][0].fullName }}</th>
                     <th>{{ userdetails[todo.requestinfo[0].userId][0].emailAddress }}</th>
                     <th><button v-if="section1Tabs[todo.requestId][0][0].Feature"   type="button" v-on:click="changerequeststatus(section1Tabs[todo.requestId][0][0].Feature, todo.requestId)" class="btn btn-dark" >Approve</button></th>

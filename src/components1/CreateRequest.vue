@@ -15,9 +15,14 @@
         body-classes="px-lg-5 py-lg-5"
         class="border-0 mb-0">
                 <form>
-                    <h3>Create a Request</h3>
+                  <div class="row">
+                    <h3>Create a Request</h3><hr>
+                     <base-button type="danger" class="btn btn-dark" @click.native="modals.classic = false">
+                      Close
+                    </base-button>
+                  </div>
                     <div class="form-row">
-                        <base-input class="col-md-6" label="Option1" placeholder="Option1" v-model="input.option1"/>
+                        
                        <base-input class="col-md-4 dropdown-toggle" label="Request Type" slot="title-container" type="secondary">
                             <select id="inputState" class="form-control " v-model="selected">
                             <option disabled value="">Choose a request</option>
@@ -25,7 +30,7 @@
                             <option class="font-weight-bold">Email id Generation</option>
                             </select>
                     </base-input>
-                        <base-input class="col-md-2" label="Option2" placeholder="Option2" v-model="input.option2"/>
+                        
                     </div>
 
                      <div class="form-group">
@@ -37,9 +42,7 @@
         <!--footer-->
         <template slot="footer">
 
-            <base-button block type="danger" class=" mb-3" @click.native="modals.classic = false">
-                Close
-            </base-button>
+           
 
              <base-button block type="default" class=" mb-3" v-on:click="submitrequest()">
                 Save
@@ -102,7 +105,8 @@
                     .then(response => {
                     // JSON responses are automatically parsed.
                       console.log(response)
-                      this.successmessage="Your request has been created"
+                      this.successmessage="Your request has been created";
+                      modals.classic = false;
                               
                   })
                     .catch(e => {
