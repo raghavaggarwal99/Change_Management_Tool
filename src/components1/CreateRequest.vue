@@ -15,21 +15,24 @@
         body-classes="px-lg-5 py-lg-5"
         class="border-0 mb-0">
                 <form>
-                  <div class="row">
-                    <h3>Create a Request</h3><hr>
-                     <base-button type="danger" class="btn btn-dark" @click.native="modals.classic = false">
-                      Close
+                  <div class="form-row">
+                    <h3 class="text-center" id="heading">Create a Request</h3>
+                     <base-button type="danger" class="btn btn-dark" id="button" @click.native="modals.classic = false">
+                      ×
                     </base-button>
+                  
                   </div>
+
                     <div class="form-row">
                         
-                       <base-input class="col-md-4 dropdown-toggle" label="Request Type" slot="title-container" type="secondary">
+                       <base-input  label="Request Type" slot="title-container" type="secondary">
                             <select id="inputState" class="form-control " v-model="selected">
                             <option disabled value="">Choose a request</option>
-                            <option class="font-weight-bold">VPN Access</option>
+                            <option class="greenText">VPN Access</option>
                             <option class="font-weight-bold">Email id Generation</option>
+                            <option class="font-weight-bold">New Laptop</option>
                             </select>
-                    </base-input>
+                      </base-input>
                         
                     </div>
 
@@ -120,3 +123,16 @@
        }
     }
 </script>
+
+
+<style type="css">
+
+#button {
+  position: absolute;
+  
+    left:440px;
+    padding: 10px;
+}
+
+
+</style>

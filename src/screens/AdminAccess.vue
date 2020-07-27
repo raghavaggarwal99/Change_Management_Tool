@@ -28,6 +28,7 @@
 								<th>Name</th>
                                 <th>Email Id</th>
                                 <th>Phone Number</th>
+                                <th>Position</th>
                                 <th>VPN Access</th>
 								<th>Laptop Available</th>
 							</tr>
@@ -38,6 +39,7 @@
                                 <th>{{ todo[0].fullName}}</th>
                                 <th>{{ todo[0].emailAddress}}</th>
                                 <th>{{ todo[0].phoneNumber}}</th>
+                                <th>{{ todo[0].Role}}</th>
                                 <th>{{ todo.includes('VPN')}}</th>
                                 <th>{{ todo.includes('Laptop Available')}}</th>
                             </tr>

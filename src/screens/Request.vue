@@ -1,28 +1,29 @@
 <template>
-  <div class="vue-tempalte">
-
+<div class="vue-tempalte">
  <div class="card shadow mb-4">
 						<div class="card-header py-3">
 							<h6 class="m-0 font-weight-bold text-primary">Sent Requests</h6>
 						</div>
+
 						<div class="card-body">
 							<div class="table-responsive">
+
                 <div class="row"> 
- 
-                <card>
-                <CreateRequest @input="filterstatus" />
-                </card>
+                   
+                  <CreateRequest @input="filterstatus" class="col-md-11" id="createrequest" />
                 </div>
+                
                       <br>
-                      <div class="col-lg-6 col-md-12">
+                    
                       <h6 class="m-0 font-weight-bold text-primary">Status</h6>
                       <multiselect
                         v-model="statusselected"
                         :multiple="true"
                         :options="statusoptions"
-                        @input="filterstatus" >
+                        @input="filterstatus">
                       </multiselect>
-                    </div>
+                      <br>
+                  
 
                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
 									<thead>
@@ -168,3 +169,14 @@ export default {
 </script>
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css">
+
+</style>
+
+<style type="css">
+
+#createrequest {
+  position: relative;
+  left:80px;
+}
+
+</style>
