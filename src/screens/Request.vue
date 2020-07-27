@@ -27,13 +27,18 @@
                   
 
                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                  <col style="width:10%">
+                  <col style="width:10%">
+                  <col style="width:40%">
+                  <col style="width:20%">
+
 									<thead>
 										<tr>
 											<th>Sr.no</th>
 											<th>Info</th>
                       <th>Description</th>
 											<th>Status</th>
-                      <th>Delete</th>
+                     
 										</tr>
 									</thead>
 									<tbody>

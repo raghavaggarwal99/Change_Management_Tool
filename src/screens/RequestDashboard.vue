@@ -44,7 +44,7 @@
 			</div>
         </div>
 
-                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered table-hover" id="dataTable" width="50%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Sr.no</th>

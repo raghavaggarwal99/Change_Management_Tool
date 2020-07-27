@@ -21,7 +21,7 @@
                    <br>
             
 
-                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered table-hover" id="dataTable" width="50%" cellspacing="0">
 						<thead>
 						    <tr>
 								<th>Sr.no</th>
@@ -30,6 +30,7 @@
                                 <th>Phone Number</th>
                                 <th>Position</th>
                                 <th>VPN Access</th>
+                                <th>Email id Generation</th>
 								<th>Laptop Available</th>
 							</tr>
 						</thead>
@@ -40,8 +41,9 @@
                                 <th>{{ todo[0].emailAddress}}</th>
                                 <th>{{ todo[0].phoneNumber}}</th>
                                 <th>{{ todo[0].Role}}</th>
-                                <th>{{ todo.includes('VPN')}}</th>
-                                <th>{{ todo.includes('Laptop Available')}}</th>
+                                <th>{{ todo.includes('VPN Access')}}</th>
+                                <th>{{ todo.includes('Email id Generation')}}</th>
+                                <th>{{ todo.includes('New Laptop')}}</th>
                             </tr>
 						
 						</tbody>
@@ -83,7 +85,7 @@ export default {
                 perPage: 1,
                 currentPage: 1,
                 accessselected: [],
-                accessoptions: ['VPN', 'Laptop Available', 'EmailId Generation']
+                accessoptions: ['VPN Access', 'Email id Generation', 'New Laptop']
             }
         },
         created () {
