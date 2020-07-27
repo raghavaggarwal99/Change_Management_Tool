@@ -67,7 +67,7 @@
                 this.errormessage="";
                 
                 if(this.input.email != "" && this.input.password != "") {
-                    await this.$axios.post(`http://127.0.0.1:1337/login`, {
+                    await this.$axios.post(this.$Login, {
                             EmailAddress: this.input.email,
                             Password: this.input.password,
                         })
@@ -75,8 +75,9 @@
                         // JSON responses are automatically parsed.
                             console.log(response["data"].token)
                             this.$cookie.set('token',response["data"].token);
+                            this.$cookie.set('permission',response["data"].permission);
                             this.errormessage="";
-                            this.$router.push({ path: '/dashboard' })
+                            this.$router.push({ path: '/request' })
                         })
                         .catch(e => {
                             console.log(e)

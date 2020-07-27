@@ -14,14 +14,15 @@
                 </div>
                 
                       <br>
-                    
+                      
                       <h6 class="m-0 font-weight-bold text-primary">Status</h6>
                       <multiselect
                         v-model="statusselected"
                         :multiple="true"
                         :options="statusoptions"
-                        @input="filterstatus">
+                        @input="filterstatus" >
                       </multiselect>
+            
                       <br>
                   
 
@@ -43,11 +44,12 @@
                     <th>{{ todo.description}}</th>
                     <th>{{ todo.status}}</th>
                     <th>
+
                   <button type="info" v-if="todo.status == 'Pending' && todo.isDeleted == '0'" v-on:click="deleterequest(todo.id)" class="btn btn-dark a-btn-slide-text tim-icons icon-trash-simple">    
                            
                   </button>
-                   <base-alert type="danger" v-if="todo.isDeleted == '1'" class="col-lg-6 col-md-12">
-                    <span>Deleted</span>
+                   <base-alert v-if="todo.isDeleted == '1'" class="col-lg-6 col-md-12" id="delete">
+                    <span >Deleted</span>
                   </base-alert>
                   </th>
                 
@@ -111,7 +113,7 @@ export default {
         },
          methods: {
             async fetchData () {
-                 await this.$axios.post(`http://127.0.0.1:1337/sentrequests`,{
+                 await this.$axios.post(this.$SentRequests,{
                    PageId: this.currentPage,
                     StatusFilter: this.statusselected,
             
@@ -134,7 +136,7 @@ export default {
 
                     console.log(requestid)
                     this.errormessage=""
-                 await this.$axios.post(`http://127.0.0.1:1337/deleterequest`, {
+                 await this.$axios.post(this.$DeleteRequest, {
 
                           headers: {
                               'Authorization': `${this.$cookie.get('token')}`
@@ -177,6 +179,12 @@ export default {
 #createrequest {
   position: relative;
   left:80px;
+}
+#delete {
+
+  position: relative;
+  left:20px;
+  padding: 10px;
 }
 
 </style>

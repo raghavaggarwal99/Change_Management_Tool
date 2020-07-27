@@ -12,7 +12,7 @@ export default {
         },
          methods: {
             async fetchData () {
-                 await this.$axios.post(`http://127.0.0.1:1337/signout`,{
+                 await this.$axios.post(this.$SignOut,{
                  })
                         .then(response => {
                         // JSON responses are automatically parsed.

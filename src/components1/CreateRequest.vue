@@ -98,7 +98,7 @@
       methods: {
         async submitrequest (){ 
             if(this.input.description != "" && this.selected != "") {
-              await this.$axios.post(`http://127.0.0.1:1337/request`, {
+              await this.$axios.post(this.$Request, {
                     Info: this.selected,
                     Description: this.input.description,
                     headers: {
@@ -131,8 +131,17 @@
   position: absolute;
   
     left:440px;
-    padding: 10px;
+    padding: 15px;
 }
 
+#heading {
+
+  position: relative;
+  left: 120px;
+  padding: 5px;
+  
+  
+
+}
 
 </style>

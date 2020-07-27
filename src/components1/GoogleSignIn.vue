@@ -22,7 +22,7 @@ export default {
         .signIn()
         .then(GoogleUser => {
            console.log(GoogleUser)
-           this.$axios.post(`http://127.0.0.1:1337/googlesignin`, {
+           this.$axios.post(this.$GoogleSignIn, {
                 idToken: GoogleUser.getAuthResponse().id_token,
                 })
                 .then(response => {

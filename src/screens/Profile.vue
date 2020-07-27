@@ -46,7 +46,7 @@
         },
          methods: {
             async fetchData () {
-                 await this.$axios.post(`http://127.0.0.1:1337/profile`,{
+                 await this.$axios.post(this.$Profile,{
                    headers: {
                               'Authorization': `${this.$cookie.get('token')}`
                             }
@@ -76,27 +76,18 @@
 </style>
 
 
-
-//close button cross
-//Create request padding
 //COlor of drop down
 
-//Create request button padding margin
-//Filter padding margin
-//Table alignment with sent request
+//Deleted base alert ek baar dikhana hai
+
 // Filter drop down over lay not displace tgable
-//Dashboard table visib;e when permission
-//If dashboardf empty, no pending request empty state
-//filter in dashboard table
-//Description in request make it type TEXT 
-//Logs decending order
-//Timestamp change to mm hh format
-//Request type in logs
+
+
+//2 filters niche niche hai in dashboard karna padega vo thik
+
 //Alphabetic sort in access table
-//EMployee code
-//Company hata de profile page se
-// Set time out for password successful changed then change route 
-// Forgot passwored crendential incorrect red color
-// CHANGE urls of backend apis and store it in variable throughout
+
+
 //Dashboard api 2 baar hit after login
-//Deleted margin
+
+

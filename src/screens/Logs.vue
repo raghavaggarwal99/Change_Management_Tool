@@ -15,7 +15,7 @@
                 </card>
                 </div>
                       <br>
-                      <div class="col-lg-6 col-md-12">
+                     
                       <h6 class="m-0 font-weight-bold text-primary">Status</h6>
                       <multiselect
                         v-model="statusselected"
@@ -23,7 +23,7 @@
                         :options="statusoptions"
                         @input="filterstatus" >
                       </multiselect>
-                    </div>
+                   <br>
 
                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
 			        <thead>
@@ -32,8 +32,9 @@
 
 							<th>User Id</th>
                 <th>Name</th>
+                <th>Request Type</th>
                 <th>Request Id</th>
-							<th>Action</th>
+							  <th>Action</th>
                 <th>TimeStamp</th>
 						</tr>
 					</thead>
@@ -43,6 +44,7 @@
                         <th>{{ (currentPage-1)*itemsforpage + count+1}}</th>
                         <th>{{ todo.userId}}</th>
                         <th>{{userdetails[todo.userId][0].fullName}}</th>
+                         <th>{{requestdetails[todo.RequestId][0].info}}</th>
                         <th>{{ todo.RequestId}}</th>
                         <th>{{ todo.Action}}</th>
                         <th>{{ todo.TimeStamp}}</th>
@@ -86,6 +88,7 @@ export default {
             return {
                 section1Tabs: "",
                 userdetails: "",
+                requestdetails: "",
                 errormessage: '',
                 count: 1,
                 perPage: 1,
@@ -101,7 +104,7 @@ export default {
         },
          methods: {
             async fetchData () {
-                 await this.$axios.post(`http://127.0.0.1:1337/logs`,{
+                 await this.$axios.post(this.$Logs,{
                    PageId: this.currentPage,
                     StatusFilter: this.statusselected,
             
@@ -111,11 +114,12 @@ export default {
                  })
                         .then(response => {
                         // JSON responses are automatically parsed.
-                            // console.log(response["data"].results.fetchnumberpages)
+                            console.log(response["data"].results.fetchuserdetails)
                             this.itemsforpage= response["data"].itemsperpage
                             this.perPage=(response["data"].results.fetchnumberpages);
                             this.section1Tabs=response["data"].results.fetchlogs;
-                            this.userdetails=response["data"].results.fetchuserdetails;
+                            this.userdetails=response["data"].results.fetchuserdetails[0];
+                            this.requestdetails=response["data"].results.fetchuserdetails[1];
 
                         })
                         .catch(e => {

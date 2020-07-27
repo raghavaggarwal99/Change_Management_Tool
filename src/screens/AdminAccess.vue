@@ -7,19 +7,19 @@
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
-                    <div class="row"> 
-                       
-                    </div>
+                   
                     <br>
-                   <div class="col-lg-6 col-md-12">
-                      <h6 class="m-0 font-weight-bold text-primary">Access</h6>
+
+                  
+                    <h6 class="m-0 font-weight-bold text-primary">Access</h6>
                       <multiselect
                         v-model="accessselected"
                         :multiple="true"
                         :options="accessoptions"
                         @input="filteraccess" >
                       </multiselect>
-                      </div>
+                   <br>
+            
 
                     <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
 						<thead>
@@ -91,7 +91,7 @@ export default {
         },
          methods: {
             async fetchData () {
-                 await this.$axios.post(`http://127.0.0.1:1337/access`, {
+                 await this.$axios.post(this.$Access, {
                     PageId: this.currentPage,
                     accessfilter: this.accessselected,
 

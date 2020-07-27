@@ -23,9 +23,15 @@
 
             <button type="button" v-on:click="changepassword()" class="btn btn-dark btn-lg btn-block">Change password</button>
             <br>
-             <div class=" alert-success" role="alert">
-                <span role="alert">{{errormessage}}</span>
-            </div>
+
+            <base-alert type="danger" dismissible v-if="errormessage != ''">
+                <span><b> {{errormessage}} </b></span>
+            </base-alert>
+
+            <base-alert type="success" dismissible v-if="successmessage != ''">
+                <span><b> {{successmessage}} </b></span>
+            </base-alert>
+
             
         </form>
         </card>
@@ -35,10 +41,18 @@
 </template>
 
 <script>
+    import { BaseAlert } from '@/components';
+
     export default {
+
+        components: {
+            BaseAlert
+        },
+
         data() {
             return {
                 errormessage: '',
+                successmessage: '',
                 input: {
                     password: '',
                     password2: '',
@@ -49,26 +63,34 @@
             async changepassword () {
                 if(this.input.password2 != "" && this.input.password != ""){
                     if(this.input.password2 == this.input.password){
-                    await this.$axios.post(`http://127.0.0.1:1337/changepassword`,{
+
+                    await this.$axios.post(this.$ChangePassword,{
                             EmailAddress: this.$cookie.get('email'),
                             Password1: this.input.password,
                     })
                             .then(response => {
                             // JSON responses are automatically parsed.
                                 console.log(response)
-                                this.errormessage= "Your password has been changed"
+                                this.errormessage= "";
+                                this.successmessage= "Your password has been changed"
                                 this.$cookies.remove('email');
                                 this.$cookies.remove('resetlink');
-                                this.$router.push({ path: '/' })
+                                
+                                 setTimeout(function () {
+                                    this.$router.push({ path: '/' })
+                                }.bind(this), 2000);
+
                             })
                             .catch(e => {
                                 console.log(e)
-                                this.errormessage= "The passwords do not match"
+                                this.errormessage= "The passwords do not match";
+                                this.successmessage= "";
                         })
                     }
                 }
                 else{
                     this.errormessage= "The passwords do not match"
+                    this.successmessage= ""
                 }
             },
         }
