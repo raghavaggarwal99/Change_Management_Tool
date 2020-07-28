@@ -17,16 +17,17 @@
                 <form>
                   <div class="form-row">
                     <h3 class="text-center" id="heading">Create a Request</h3>
-                     <base-button type="danger" class="btn btn-dark" id="button" @click.native="modals.classic = false">
+                     <base-button type="danger" class="btn btn-dark" id="button" v-on:click="closebutton()">
                       ×
                     </base-button>
                   
                   </div>
+                  <br><br>
 
                     <div class="form-row">
                         
                        <base-input  label="Request Type" slot="title-container" type="secondary">
-                            <select id="inputState" class="form-control " v-model="selected">
+                            <select class="form-control" v-model="selected">
                             <option disabled value="">Choose a request</option>
                             <option class="greenText">VPN Access</option>
                             <option class="font-weight-bold">Email id Generation</option>
@@ -36,6 +37,7 @@
                         
                     </div>
 
+      
                      <div class="form-group">
                         <label>Description</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write a large text here ..." v-model="input.description"></textarea>
@@ -109,8 +111,11 @@
                     // JSON responses are automatically parsed.
                       console.log(response)
                       this.successmessage="Your request has been created";
-                      modals.classic = false;
-                              
+
+                       setTimeout(function () {
+                          this.modals.classic = false;
+                        }.bind(this), 500);
+                               
                   })
                     .catch(e => {
                       console.log(e)
@@ -119,7 +124,12 @@
             else{
                 this.errormessage="Please fill the form"
               }
-          }  
+          },
+          closebutton(){
+
+            this.modals.classic = false;
+          },
+
        }
     }
 </script>
@@ -139,8 +149,6 @@
   position: relative;
   left: 120px;
   padding: 5px;
-  
-  
 
 }
 

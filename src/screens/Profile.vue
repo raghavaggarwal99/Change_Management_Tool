@@ -76,17 +76,9 @@
 </style>
 
 
-//COlor of drop down
-
 //Deleted base alert ek baar dikhana hai
 
-// Filter drop down over lay not displace tgable
-
-
-//2 filters niche niche hai in dashboard karna padega vo thik
-
-//Alphabetic sort in access table
-
+//Filter drop down over lay not displace tgable
 
 //Dashboard api 2 baar hit after login
 
