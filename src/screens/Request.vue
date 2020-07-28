@@ -31,6 +31,7 @@
                   <col style="width:10%">
                   <col style="width:40%">
                   <col style="width:20%">
+                  <col style="width:15%">
 
 									<thead>
 										<tr>
@@ -50,11 +51,11 @@
                     <th>{{ todo.status}}</th>
                     <th>
 
-                  <button type="info" v-if="todo.status == 'Pending' && todo.isDeleted == '0'" v-on:click="deleterequest(todo.id)" class="btn btn-dark a-btn-slide-text tim-icons icon-trash-simple">    
+                  <button type="info" id="deleteicon" v-if="todo.status == 'Pending' && todo.isDeleted == '0'" v-on:click="deleterequest(todo.id)" class="btn btn-dark a-btn-slide-text tim-icons icon-trash-simple">    
                            
                   </button>
                    <base-alert v-if="todo.isDeleted == '1'" class="col-lg-6 col-md-12" id="delete">
-                    <span >Deleted</span>
+                    <span id="deletetext">Deleted</span>
                   </base-alert>
                   </th>
                 
@@ -188,7 +189,21 @@ export default {
 #delete {
 
   position: relative;
-  left:20px;
+  left:35px;
+  padding: 10px;
+}
+
+#deletetext {
+
+  position: relative;
+  left:10px;
+  padding: 10px;
+}
+
+#deleteicon {
+
+  position: relative;
+  left:80px;
   padding: 10px;
 }
 

@@ -51,11 +51,11 @@
                         </tr>
                     </thead>
 
-                      <div class="card shadow mb-4 "  v-if="section2Tabs == ''">
+                      <!-- <div class="card shadow mb-4 "  v-if="section2Tabs == ''">
                         <div class="card-header py-3 norequest">
                             <h6 class="m-0 font-weight-bold text-primary" id="heading">There are no requests</h6>
                         </div>
-                    </div>
+                    </div> -->
 
                         <tbody>		
                             <tr v-for="(todo,count) in section2Tabs" :key="todo.id">
