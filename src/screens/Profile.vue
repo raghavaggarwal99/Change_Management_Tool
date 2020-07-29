@@ -37,12 +37,13 @@
         user: {
           fullName: '',
           title: '',
-          description: `Welcome to your Profile`,
+          description: ``,
         }
       }
     },
      created () {
             this.fetchData()
+        
         },
          methods: {
             async fetchData () {
@@ -54,7 +55,8 @@
                  })
                         .then(response => {
                         // JSON responses are automatically parsed.
-                          console.log(response["data"].user)
+                          // console.log(response["data"].user)
+
                           this.model.username=response["data"].user.fullName
                           this.model.fullName=response["data"].user.fullName
                           this.model.PhoneNumber=response["data"].user.phoneNumber
@@ -78,8 +80,8 @@
 
 //Deleted base alert ek baar dikhana hai
 
-//Filter drop down over lay not displace tgable
-
-//Dashboard api 2 baar hit after login
+//Filter drop down over lay not displace 
+//Dashboard mein ask filter and kese and kon kon se, and "no request vaala "
+//Dashboard api 2 baar hit after login- VO computed ke karann hora hai.
 
 

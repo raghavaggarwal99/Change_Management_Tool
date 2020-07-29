@@ -44,7 +44,7 @@
                    :show-close="true">
               <input slot="header" v-model="searchQuery" type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
             </modal>
-            <base-dropdown tag="li"
+            <!-- <base-dropdown tag="li"
                            :menu-on-right="!$rtl.isRTL"
                            title-tag="a" class="nav-item">
               <a slot="title" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true">
@@ -53,7 +53,7 @@
                 <p class="d-lg-none">
                   New Notifications
                 </p>
-              </a>
+              </a> -->
 
               <!-- <li class="nav-link">
                 <a href="#" class="nav-item dropdown-item">Mike John responded to your email</a>
@@ -71,7 +71,7 @@
                 <a href="#" class="nav-item dropdown-item">Another one</a>
               </li> -->
 
-            </base-dropdown>
+            <!-- </base-dropdown> -->
             <base-dropdown tag="li"
                            :menu-on-right="!$rtl.isRTL"
                            title-tag="a"

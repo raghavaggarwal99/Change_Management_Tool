@@ -78,7 +78,7 @@
                                 
                                  setTimeout(function () {
                                     this.$router.push({ path: '/' })
-                                }.bind(this), 2000);
+                                }.bind(this), 1000);
 
                             })
                             .catch(e => {

@@ -10,7 +10,7 @@
 
                 <div class="row"> 
                    
-                  <CreateRequest @input="filterstatus" class="col-md-11" id="createrequest" />
+                  <CreateRequest class="col-md-11" id="createrequest" />
                 </div>
                 
                       <br>
@@ -91,6 +91,8 @@
   import Multiselect from 'vue-multiselect'
   import CreateRequest from '../components1/CreateRequest'
 
+  import { EventBus } from '../main.js';
+
 export default {
 
     components : {
@@ -115,8 +117,16 @@ export default {
             }
         },
         created () {
-            this.fetchData()
+            this.fetchData();
+
+            EventBus.$on('RequestGenerated', data => {
+              this.fetchData()
+                // You can then call your method attached to this component here
+                
+            });
+            
         },
+
          methods: {
             async fetchData () {
                  await this.$axios.post(this.$SentRequests,{

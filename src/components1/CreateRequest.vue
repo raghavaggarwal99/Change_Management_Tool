@@ -17,14 +17,14 @@
                 <form>
                   <div class="form-row">
                     <h3 class="text-center" id="heading">Create a Request</h3>
-                     <base-button type="danger" class="btn btn-dark" id="button" v-on:click="closebutton()">
+                     <base-button type="danger" class="btn btn-dark" id="button" @click.native="modals.classic = false">
                       ×
                     </base-button>
                   
                   </div>
-                  <br><br>
+                  <br>
 
-                    <div class="form-row">
+                    <div class="form-row" id="requesttype">
                         
                        <base-input  label="Request Type" slot="title-container" type="secondary">
                             <select class="form-control" v-model="selected">
@@ -38,7 +38,7 @@
                     </div>
 
       
-                     <div class="form-group">
+                     <div class="form-group" id="requesttype">
                         <label>Description</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write a large text here ..." v-model="input.description"></textarea>
                     </div>
@@ -72,14 +72,18 @@
   import {Modal} from '@/components';
  
   import { BaseAlert } from '@/components';
-
+  import Request from '../screens/Request';
+   import { EventBus } from '../main.js';
+  
     export default {
       components :{
           Modal,
           // VModal,
-          BaseAlert
+          BaseAlert,
+          Request
       },
       name: 'CreateRequest',
+      
 
       data(){
         return {
@@ -115,7 +119,11 @@
                        setTimeout(function () {
                           this.modals.classic = false;
                         }.bind(this), 500);
-                               
+
+
+                        EventBus.$emit('RequestGenerated', 'request');
+
+
                   })
                     .catch(e => {
                       console.log(e)
@@ -124,10 +132,6 @@
             else{
                 this.errormessage="Please fill the form"
               }
-          },
-          closebutton(){
-
-            this.modals.classic = false;
           },
 
        }
@@ -150,6 +154,12 @@
   left: 120px;
   padding: 5px;
 
+}
+
+#requesttype{
+  position: relative;
+  left: 8px;
+  padding: 5px;
 }
 
 </style>

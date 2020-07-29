@@ -51,11 +51,11 @@
                         </tr>
                     </thead>
 
-                      <!-- <div class="card shadow mb-4 "  v-if="section2Tabs == ''">
-                        <div class="card-header py-3 norequest">
+                    <div v-if="section2Tabs == ''" id="norequests">
+                        <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary" id="heading">There are no requests</h6>
                         </div>
-                    </div> -->
+                    </div>
 
                         <tbody>		
                             <tr v-for="(todo,count) in section2Tabs" :key="todo.id">
@@ -193,19 +193,21 @@ export default {
 
 
 <style type="css">
-.norequest{
-
- left: 100px;
-  
-}
 
 #heading {
 
   position: absolute;
   
-    left: 100px;
+  left: 2000px;
+}
+
+
+#norequests{
+
+position: relative;
   
-  
+left: 500px;
+
 
 }
 

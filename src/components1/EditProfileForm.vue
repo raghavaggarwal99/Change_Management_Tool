@@ -12,14 +12,16 @@
       <div class="col-md-3 px-md-1">
         <base-input label="Username"
                   placeholder="Username"
-                  v-model="model.username">
+                  v-model="model.username"
+                  disabled>
         </base-input>
       </div>
       <div class="col-md-4 pl-md-1">
         <base-input label="Email address"
                   type="email"
                   v-model="model.emailAddress"
-                  placeholder="mike@email.com">
+                  placeholder="mike@email.com"
+                  disabled>
         </base-input>
       </div>
     </div>
@@ -27,13 +29,15 @@
       <div class="col-md-6 pr-md-1">
         <base-input label="Full Name"
                   v-model="model.fullName"
-                  placeholder="Full Name">
+                  placeholder="Full Name"
+                  disabled>
         </base-input>
       </div>
       <div class="col-md-6 pl-md-1">
         <base-input label="Role"
                   v-model="model.role"
-                  placeholder="Role">
+                  placeholder="Role"
+                  disabled>
         </base-input>
       </div>
     </div>
@@ -41,7 +45,8 @@
       <div class="col-md-12">
         <base-input label="PhoneNumber"
                   v-model="model.PhoneNumber"
-                  placeholder="Phone Number">
+                  placeholder="Phone Number"
+                  disabled>
         </base-input>
       </div>
     </div>

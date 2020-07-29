@@ -23,6 +23,8 @@ const gauthOption = {
   prompt: 'select_account'
 }
 
+export const EventBus = new Vue();
+
 Vue.use(GoogleAuth, gauthOption)
 Vue.use(VueCookie)
 
@@ -30,6 +32,7 @@ Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 Vue.prototype.$vue = Vue
 
+//Backend URLS
 Vue.prototype.$Profile = 'http://127.0.0.1:1337/profile'
 Vue.prototype.$Request = 'http://127.0.0.1:1337/request'
 
