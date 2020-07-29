@@ -30,11 +30,11 @@ export default {
                     console.log(response["data"].token)
                     this.$cookie.set('token',response["data"].token);
                     this.errormessage="";
-                    this.$router.push({ path: '/dashboard' })
+                    this.$router.push({ path: '/request' })
                 })
                 .catch(e => {
                         console.log(e)
-                        this.$router.push({ path: '/dashboard' })
+                        this.$router.push({ path: '/request' })
                     })
 
         //   router.push('/home')

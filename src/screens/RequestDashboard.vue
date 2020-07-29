@@ -12,16 +12,16 @@
 				<div class="table-responsive">
 
 
-                    <br>
-                  
-                    <h6 class="m-0 font-weight-bold text-primary">Status</h6>
+                    <!-- <br>
+                   -->
+                    <!-- <h6 class="m-0 font-weight-bold text-primary">Status</h6>
                       <multiselect
                         v-model="statusselected"
                         :multiple="true"
                         :options="statusoptions"
                         @input="filterstatus" >
                       </multiselect>
-            
+             -->
                   
 
 
@@ -36,6 +36,7 @@
                       </multiselect>
             
        
+                    <br>
                     <br>
 
                     <table class="table table-bordered table-hover" id="dataTable" width="50%" cellspacing="0">

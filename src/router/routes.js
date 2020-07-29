@@ -48,15 +48,24 @@ console.log(token)
       path: '/',
       name: 'Login',
 
+   
       component: function(){
        
+        // if(token){
+        //   console.log(token)
+        //   return import("@/layout/dashboard/DashboardLayout.vue")
+        // }
+        // else{
           return import("@/screens/Login.vue")
-        
+          
+         
+        // }
       
       },
 
     },
     {
+
       path: '/request',
       component: function(){
         if(token){

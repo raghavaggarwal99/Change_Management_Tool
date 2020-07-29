@@ -116,12 +116,12 @@
                       console.log(response)
                       this.successmessage="Your request has been created";
 
+                      EventBus.$emit('RequestGenerated', 'request');
+
+
                        setTimeout(function () {
                           this.modals.classic = false;
                         }.bind(this), 500);
-
-
-                        EventBus.$emit('RequestGenerated', 'request');
 
 
                   })

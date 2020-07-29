@@ -20,9 +20,10 @@
                         v-model="statusselected"
                         :multiple="true"
                         :options="statusoptions"
-                        @input="filterstatus" >
+                        @input="filterstatus" id="dropdown">
                       </multiselect>
             
+                      <br>
                       <br>
                   
 
@@ -54,9 +55,9 @@
                   <button type="info" id="deleteicon" v-if="todo.status == 'Pending' && todo.isDeleted == '0'" v-on:click="deleterequest(todo.id)" class="btn btn-dark a-btn-slide-text tim-icons icon-trash-simple">    
                            
                   </button>
-                   <base-alert v-if="todo.isDeleted == '1'" class="col-lg-6 col-md-12" id="delete">
+                   <div v-if="todo.isDeleted == '1'" class="col-lg-6 col-md-12" id="delete">
                     <span id="deletetext">Deleted</span>
-                  </base-alert>
+                  </div>
                   </th>
                 
                   </tr>

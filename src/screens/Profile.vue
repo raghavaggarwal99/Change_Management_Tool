@@ -77,11 +77,4 @@
 <style>
 </style>
 
-
-//Deleted base alert ek baar dikhana hai
-
-//Filter drop down over lay not displace 
-//Dashboard mein ask filter and kese and kon kon se, and "no request vaala "
-//Dashboard api 2 baar hit after login- VO computed ke karann hora hai.
-
-
+//Backend api hit with computed if lagade

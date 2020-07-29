@@ -162,8 +162,8 @@
     border-left: 0 none;
 }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-    background-color: $black-states;
-    color: $default;
+    background-color: #adb5bd;
+    color: #000;
     cursor: not-allowed;
 }
 

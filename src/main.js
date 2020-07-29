@@ -33,31 +33,33 @@ Vue.prototype.$axios = axios
 Vue.prototype.$vue = Vue
 
 //Backend URLS
-Vue.prototype.$Profile = 'http://127.0.0.1:1337/profile'
-Vue.prototype.$Request = 'http://127.0.0.1:1337/request'
+var url='http://127.0.0.1:1337/'
 
-Vue.prototype.$Access = 'http://127.0.0.1:1337/access'
+Vue.prototype.$Profile = url+'profile'
+Vue.prototype.$Request = url+'request'
 
-Vue.prototype.$Dashboard = 'http://127.0.0.1:1337/dashboard'
+Vue.prototype.$Access = url+'access'
 
-Vue.prototype.$ChangeRequestStatus = 'http://127.0.0.1:1337/changerequeststatus'
+Vue.prototype.$Dashboard = url+'dashboard'
 
-Vue.prototype.$ForgotPassword = 'http://127.0.0.1:1337/forgotpassword'
+Vue.prototype.$ChangeRequestStatus = url+'changerequeststatus'
 
-Vue.prototype.$Login = 'http://127.0.0.1:1337/login'
+Vue.prototype.$ForgotPassword = url+'forgotpassword'
 
-Vue.prototype.$Logs = 'http://127.0.0.1:1337/logs'
+Vue.prototype.$Login = url+'login'
 
-Vue.prototype.$SentRequests = 'http://127.0.0.1:1337/sentrequests'
+Vue.prototype.$Logs = url+'logs'
 
-Vue.prototype.$DeleteRequest = 'http://127.0.0.1:1337/deleterequest'
+Vue.prototype.$SentRequests = url+'sentrequests'
 
-Vue.prototype.$ChangePassword = 'http://127.0.0.1:1337/changepassword'
+Vue.prototype.$DeleteRequest = url+'deleterequest'
 
-Vue.prototype.$SignOut = 'http://127.0.0.1:1337/signout'
-Vue.prototype.$GoogleSignIn = 'http://127.0.0.1:1337/googlesignin'
+Vue.prototype.$ChangePassword = url+'changepassword'
 
-Vue.prototype.$SignOut = 'http://127.0.0.1:1337/signout'
+Vue.prototype.$SignOut = url+'signout'
+Vue.prototype.$GoogleSignIn = url+'googlesignin'
+
+Vue.prototype.$SignOut = url+'signout'
 
 
 /* eslint-disable no-new */
