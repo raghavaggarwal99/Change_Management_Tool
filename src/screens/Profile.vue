@@ -78,3 +78,29 @@
 </style>
 
 //Backend api hit with computed if lagade
+
+//Color font according to black theme
+//notification of delete/approve request- at center/modal/ jaha user ko dikhe
+//Scroll bars in tables
+//Global search in the top bar
+//Admin access true/false ko yes/no- think from a user perspective
+//Filters accordingly or and and
+//Sent Requests sorted by time- central helper code basically code repeat nahi
+
+//Level1 Approve/Level 2 Approve- Make it from a ui-perspective
+
+//Dynamic columns from backend- not front end like in Admin Access- drop down vaala from backend
+
+//Workflow on type of request- Dynamically
+
+//System Architecture, so that it becomes easy and new things could be added easily according to new requirements
+
+//Delegation- Assign the request to someone else, example sahil doesn't know a request whether can be approved or not. Logs entry accordingly
+
+Problems: 
+// Cache invalidation- 
+
+//Variable naming- (To be focused on at my level)
+
+//Off by one error
+

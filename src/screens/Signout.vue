@@ -19,7 +19,10 @@ export default {
                             console.log(response)
                             this.$cookies.remove("token");
                             this.$cookies.remove('resetlink');
-                            this.$router.push({ path: '/',  name: 'Login', })
+                            // this.$cookies.remove('loginstate');
+                            // this.$cookie.set('loginstate',0);
+                             this.$router.go('/request')
+                            // this.$router.push({ path: '/',  name: 'Login', })
                         })
                         .catch(e => {
                             console.log(e)

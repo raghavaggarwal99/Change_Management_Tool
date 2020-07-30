@@ -76,8 +76,8 @@
                                 this.$cookies.remove('email');
                                 this.$cookies.remove('resetlink');
                                 
-                                 setTimeout(function () {
-                                    this.$router.push({ path: '/' })
+                                setTimeout(function () {
+                                    this.$router.push('/')
                                 }.bind(this), 1000);
 
                             })

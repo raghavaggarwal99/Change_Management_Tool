@@ -4,12 +4,15 @@ import NotFound from "@/pages/NotFoundPage.vue";
 import Vue from 'vue'
 import VueCookies from 'vue-cookies'
 
+
 Vue.use(VueCookies)
 
 let cookieValue="" 
 let token=""
+
 let value=document.cookie.split('; ').find(row => row.startsWith('resetlink'))
 let tokenvalue=document.cookie.split('; ').find(row => row.startsWith('token'))
+
 
 if(value){
     cookieValue = value.split('=')[1];
@@ -18,8 +21,9 @@ if(tokenvalue){
   token = tokenvalue.split('=')[1];
 }
 
-console.log(document.cookie)
-console.log(cookieValue)
+
+// console.log(document.cookie)
+// console.log(cookieValue)
 
 // Admin pages
 
@@ -38,7 +42,6 @@ const AdminAccess = () => import(/* webpackChunkName: "common" */ "@/screens/Adm
 
 const Logs = () => import(/* webpackChunkName: "common" */ "@/screens/Logs.vue");
 
-
 var routes= [];
 
 console.log(token)
@@ -47,34 +50,43 @@ console.log(token)
     {
       path: '/',
       name: 'Login',
+        
 
-   
-      component: function(){
-       
-        // if(token){
-        //   console.log(token)
-        //   return import("@/layout/dashboard/DashboardLayout.vue")
-        // }
-        // else{
-          return import("@/screens/Login.vue")
+        beforeEnter: (to, from, next) => {
+
+            if (!token) {
+              next()
+            }
           
-         
-        // }
-      
-      },
+            else if(token){
+              next({path:'/request'})
+            }
+               
+        },
+        component: function(){
+          return import("@/screens/Login.vue")
+                 
+        },
 
     },
     {
 
       path: '/request',
+      beforeEnter: (to, from, next) => {
+
+        if (token) {
+          next()
+        }
+        else {
+          next({path:'/'})
+        }
+           
+    },
+
       component: function(){
-        if(token){
-          console.log(token)
+       
           return import("@/layout/dashboard/DashboardLayout.vue")
-        }
-        else{
-          return import("@/screens/Login.vue")
-        }
+       
       },
       redirect: '/',
 
@@ -89,15 +101,23 @@ console.log(token)
     {
       path: '/dashboard',
       
+      beforeEnter: (to, from, next) => {
+
+        if (token) {
+          next()
+        }
+        else {
+          next({path:'/'})
+        }
+           
+    },
+
       component: function(){
-        if(token){
-          console.log(token)
+       
           return import("@/layout/dashboard/DashboardLayout.vue")
-        }
-        else{
-          return import("@/screens/Login.vue")
-        }
+       
       },
+
       redirect: '/',
 
       children: [
@@ -115,14 +135,21 @@ console.log(token)
     },
     {
       path: '/profile',
+       beforeEnter: (to, from, next) => {
+
+        if (token) {
+          next()
+        }
+        else {
+          next({path:'/'})
+        }
+           
+    },
+
       component: function(){
-        if(token){
-          console.log(token)
+       
           return import("@/layout/dashboard/DashboardLayout.vue")
-        }
-        else{
-          return import("@/screens/Login.vue")
-        }
+       
       },
       redirect: '/',
 
@@ -138,23 +165,56 @@ console.log(token)
     {
       path: '/resetpassword'+cookieValue,
       name: 'Reset Password',
+      // beforeEnter: (to, from, next) => {
+
+      //   if (!token) {
+      //     next()
+      //   }
+      //   else {
+      //     next({path:'/'})
+      //   }
+           
+      // },
+
       component: ResetPassword
     },
     {
+
       path: '/signout',
       name: 'SignOut',
-      component: Signout
+     
+      beforeEnter: (to, from, next) => {
+
+        if (token) {
+          next()
+        }
+        else {
+          next({path:'/'})
+        }
+
+      },
+
+    component: Signout,
+
     },
+
     {
       path: '/adminaccess',
+      beforeEnter: (to, from, next) => {
+
+        if (token) {
+          next()
+        }
+        else {
+          next({path:'/'})
+        }
+           
+    },
+
       component: function(){
-        if(token){
-          console.log(token)
+       
           return import("@/layout/dashboard/DashboardLayout.vue")
-        }
-        else{
-          return import("@/screens/Login.vue")
-        }
+       
       },
       redirect: '/',
 
@@ -168,14 +228,21 @@ console.log(token)
     },
     {
       path: '/logs',
+      beforeEnter: (to, from, next) => {
+
+        if (token) {
+          next()
+        }
+        else {
+          next({path:'/'})
+        }
+           
+    },
+
       component: function(){
-        if(token){
-          console.log(token)
+       
           return import("@/layout/dashboard/DashboardLayout.vue")
-        }
-        else{
-          return import("@/screens/Login.vue")
-        }
+       
       },
       redirect: '/',
 

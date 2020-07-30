@@ -24,6 +24,7 @@ const gauthOption = {
 }
 
 export const EventBus = new Vue();
+export const routerextra =  new VueRouter();
 
 Vue.use(GoogleAuth, gauthOption)
 Vue.use(VueCookie)
@@ -60,7 +61,6 @@ Vue.prototype.$SignOut = url+'signout'
 Vue.prototype.$GoogleSignIn = url+'googlesignin'
 
 Vue.prototype.$SignOut = url+'signout'
-
 
 /* eslint-disable no-new */
 new Vue({

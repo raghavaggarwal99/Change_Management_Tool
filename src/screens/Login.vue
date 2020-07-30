@@ -9,11 +9,11 @@
                 <br>
                 <br>
             <card>
-                <form>
+                <form v-on:keyup="keylogin">
                     <h3>Sign In</h3>
                     <div class="form-group">
                         <label>Email address</label>
-                        <input type="text" id="email" name="email"  class="form-control form-control-lg" v-model="input.email" placeholder="Email" />
+                        <input type="text" id="email" name="email"  class="form-control form-control-lg" v-model="input.email" placeholder="Email"/>
                     </div>
 
                     <div class="form-group">
@@ -44,6 +44,7 @@
 <script>
     import GoogleSignIn from '../components1/GoogleSignIn'
     import { BaseAlert } from '@/components';
+    
 
     export default {
         name: 'Login',
@@ -61,7 +62,6 @@
                 errormessage: "",
             }
         },
-
         methods: {
             async login() {
                 this.errormessage="";
@@ -76,8 +76,16 @@
                             console.log(response["data"].token)
                             this.$cookie.set('token',response["data"].token);
                             this.$cookie.set('permission',response["data"].permission);
+                       
                             this.errormessage="";
-                            this.$router.push({ path: '/request' })
+
+                          
+                            // this.$router.next({path:'/request'})
+                                    
+                           
+                            // this.$router.push({ redirect: '/request' })
+                            this.$router.go('/request')
+                            // this.$router.push("/request");
                         })
                         .catch(e => {
                             console.log(e)
@@ -90,6 +98,17 @@
                 }
             },
           
+            keylogin: function(e) {
+                if (e.keyCode === 13) {
+                    this.login();
+                } 
+            },
+            beforeEnter: (to, from, next) => {
+               
+                next({path:'/request'})
+                
+            },
         },
+      
     }
 </script>
