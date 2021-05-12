@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "chart.js": "^2.7.3",
+    "chart.js": "^2.9.4",
     "element-ui": "^2.13.2",
     "lodash.debounce": "^4.0.8",
     "mdbvue": "^6.7.1",
